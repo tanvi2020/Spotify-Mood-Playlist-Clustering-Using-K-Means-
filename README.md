@@ -1,18 +1,95 @@
-# Spotify-Mood-Playlist-Clustering-Using-K-Means-
+# 🎧 Spotify Mood Playlist Clustering using K-Means (from Scratch)
 
-This project started with a simple idea: Can we group songs into mood-based playlists using their audio features? I used a Spotify tracks dataset from Kaggle, which contains details like energy, danceability, tempo, valence, and more for a bunch of songs. The goal was to cluster these songs into different moods or vibes — all without using any built-in machine learning libraries.
+## 📌 Motivation
 
-I began by cleaning and exploring the dataset. Luckily, there weren’t any missing values, so I could dive straight into analyzing the features. I used visualizations to understand how different attributes like loudness, acousticness, and tempo are spread across the songs. Since clustering is sensitive to feature scale, I made sure to scale all the numeric features before building the model.
+With millions of tracks available on streaming platforms like Spotify, users often struggle to discover songs that match their mood or activity. Can we build a system that clusters music based on emotional "vibe" using only audio features?
 
-The core part of the project was implementing the K-Means algorithm completely from scratch — no scikit-learn, just NumPy and logic. I first used the Elbow Method to figure out how many clusters would make sense. Then I randomly initialized centroids, assigned each song to the nearest one using Euclidean distance, and updated the centroids based on the mean of the points in each cluster. This process repeated until the centroids stopped moving — that’s when I knew the clustering had stabilized.
+This project explores how **unsupervised learning** — specifically **K-Means clustering** — can be used to automatically group songs into **mood-based playlists**, without any labeled data.
 
-Once the clusters were formed, I plotted the results and started interpreting them. Some clusters had high energy and danceability, while others leaned more towards acoustic and low-tempo tracks — this made it clear how K-Means was grouping songs based on their audio mood. It was interesting to see how well the algorithm could capture the essence of different types of music just from numbers.
+---
 
-This project helped me understand how unsupervised learning works and especially how K-Means learns structure from unlabelled data. More than just running code, building the algorithm myself gave me a much deeper grasp of concepts like centroid movement, distance calculation, and convergence. It also showed how clustering can be applied in real-world scenarios like music recommendation and playlist generation.
+## 🎯 Objective
 
-# Tools Used
-- Python 🐍
-- NumPy
-- Pandas
-- Matplotlib
+To build a mood-based playlist recommendation engine by:
+
+- Clustering songs using audio features like **energy, danceability, valence, tempo**, etc.
+- Implementing **K-Means from scratch** (no built-in ML libraries like `sklearn`)
+- Interpreting clusters based on mood and use-cases for **automated playlist creation**
+
+---
+
+## 🎶 Why Spotify?
+
+- 🎵 **80+ million tracks** are available for streaming
+- 🧠 Music plays a major role in regulating mood, focus, and productivity
+- 🎯 Listeners often seek **vibe-based playlists** (e.g., chill, workout, party)
+- 📊 Spotify provides rich **numerical audio features** suitable for clustering
+
+---
+
+## 🔄 Project Flow
+
+1. 📁 **Data Collection**  
+   Dataset of ~10,000 Spotify tracks with features from Kaggle
+
+2. 📊 **EDA & Visualization**  
+   - Distribution plots of loudness, energy, acousticness, etc.  
+   - Correlation heatmap to explore relationships
+
+3. ⚖️ **Feature Scaling**  
+   - Standardized features to avoid bias in clustering  
+   - Used MinMax or Z-score scaling
+
+4. 💡 **Elbow Method**  
+   - Plotted inertia to determine optimal `k`  
+   - Identified the "elbow" point
+
+5. 🔁 **K-Means Clustering (from Scratch)**  
+   - Random centroid initialization  
+   - Assignment based on Euclidean distance  
+   - Iterative update of centroids until convergence
+
+6. 🎨 **Cluster Visualization**  
+   - 2D plots (PCA-reduced) showing mood clusters  
+   - Compared high-energy/danceable vs. low-tempo/acoustic songs
+
+7. 💡 **Business Use Case**  
+   - Each cluster = mood-based playlist  
+   - Potential application in **automated playlist generation** for music apps
+
+---
+
+## 🧠 Key Learnings
+
+- Understood how **unsupervised learning** works without labels
+- Learned **K-Means algorithm internals** — from centroid logic to convergence
+- Discovered the importance of **feature scaling and distance metrics**
+- Connected ML logic to real-world business applications in music discovery
+
+---
+
+## 🛠️ Tools & Libraries
+
+- Python 🐍  
+- NumPy  
+- Pandas  
+- Matplotlib  
 - Seaborn
+
+---
+
+## 📸 Visuals (Add These to Boost Appeal)
+
+> You can upload these in an `images/` folder and reference them below:
+
+| Step | Image Suggestion | Markdown Example |
+|------|------------------|------------------|
+| **Mood Mapping** | A diagram like [Spotify mood energy map](https://research.atspotify.com/files/ACM_RecSys_2017_The_Mood_of_Music.pdf) | `![Mood Map](images/mood_map.png)` |
+| **Elbow Method** | Your inertia vs. k plot | `![Elbow](images/elbow_plot.png)` |
+| **K-Means Visual** | PCA-reduced cluster plot | `![Clusters](images/kmeans_clusters.png)` |
+| **Business Insight** | Icons showing playlists like "Party", "Chill", "Focus" | `![Playlists](images/mood_playlists.png)` |
+
+---
+
+## 📁 Folder Structure
+
